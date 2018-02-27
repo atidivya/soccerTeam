@@ -52,6 +52,9 @@ export class AppComponent implements OnInit {
     
   }
   currentStandings: any;
+
+  
+
   private apiURL= 'https://soccer.sportmonks.com/api/v2.0/standings/season/825?api_token=HOLCAStI6Z0OfdoPbjdSg5b41Q17w2W5P4WuoIBdC66Z54kUEvGWPIe33UYC';
 
   //data: any = {};
