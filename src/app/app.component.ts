@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
+declare var $;
 
 @Component({
   selector: 'app-root',
   template: `
-  
-  <table class="table">
+
+  <table id="dt" class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Position</th>
@@ -34,11 +35,22 @@ import 'rxjs/add/operator/map';
     </tr>
   </tbody>
 </table>
+
   
   `,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   
+  
+
+  ngOnInit(): void {
+    setTimeout(function (){
+      $(function (){
+        $('#dt').DataTable();
+      });
+    }, 3000);
+    
+  }
   currentStandings: any;
   private apiURL= 'https://soccer.sportmonks.com/api/v2.0/standings/season/825?api_token=HOLCAStI6Z0OfdoPbjdSg5b41Q17w2W5P4WuoIBdC66Z54kUEvGWPIe33UYC';
 
